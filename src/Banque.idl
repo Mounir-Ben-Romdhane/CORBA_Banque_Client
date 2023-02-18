@@ -1,0 +1,15 @@
+module corbaBanque{
+	struct Compte{
+	long code;
+	double solde;
+	};
+	typedef sequence<Compte> cptes;
+	interface IBanqueRemote{
+		double conv(in double mt);
+		void creeCompte(in Compte c);
+		void verser(in long code,in double mt);
+		void retirer(in long code,in double mt);
+		Compte getCompte(in long code);
+		cptes getComptes();
+	};
+};
